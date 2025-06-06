@@ -205,7 +205,7 @@ a {
   --color-text: var(--color-gray-900);
   --color-text-heading: var(--black);
   --color-text-subtle: var(--color-gray-700);
-  --color-body: var(--color-gray-300);
+  --color-body: var(--white);
   --color-border: var(--color-gray-700);
   --color-surface: var(--white);
 
@@ -405,6 +405,48 @@ e.g., margin-top--md: --space-md becomes --space-lg
 
 .margin-bottom--xxl {
   margin-bottom: var(--space-xxl);
+}
+
+.padding--md {
+  padding: var(--space-md);
+}
+
+.padding--sm {
+  padding: var(--space-sm);
+}
+
+.padding--lg {
+  padding: var(--space-lg);
+}
+
+.padding-x--md {
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+.padding-x--sm {
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
+}
+
+.padding-x--lg {
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+.padding-y--md {
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+}
+
+.padding-y--sm {
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+}
+
+.padding-y--lg {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
 }
 
 .visually-hidden {
