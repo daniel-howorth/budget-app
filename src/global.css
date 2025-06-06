@@ -1,0 +1,437 @@
+/* CSS RESET */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Additional Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  color: inherit;
+}
+
+:root {
+  /* COLOURS */
+
+  --color-primary: hsl(199, 69%, 51%);
+  --color-primary-light: hsl(199, 69%, 58.3%);
+  --color-primary-dark: hsl(199, 69%, 43.4%);
+  --color-primary-bg: hsla(199, 69%, 51%, 0.2);
+  --color-accent: hsl(28, 87%, 62%);
+  --color-accent-light: hsl(28, 87%, 68.7%);
+  --color-accent-dark: hsl(28, 87%, 55.8%);
+  --color-accent-bg: hsla(28, 87%, 62%, 0.2);
+  --color-success: #88c459;
+  --color-error: #f5414f;
+  --color-warning: #ffd137;
+
+  --white: hsl(0deg 0% 100%);
+  --color-gray-100: hsl(40deg 12% 95%);
+  --color-gray-300: hsl(35deg 8% 80%);
+  --color-gray-500: hsl(30deg 4% 60%);
+  --color-gray-700: hsl(28deg 5% 40%);
+  --color-gray-900: hsl(24deg 6% 16%);
+  --offblack: hsl(240, 6%, 12%);
+  --black: hsl(24deg 5% 6%);
+
+  --color-text: var(--color-gray-900);
+  --color-text-heading: var(--black);
+  --color-text-subtle: var(--color-gray-700);
+  --color-body: var(--color-gray-300);
+  --color-border: var(--color-gray-700);
+  --color-surface: var(--white);
+
+  --form-element-border: var(--color-border);
+  --form-element-border-focus: var(--color-primary);
+  --form-element-border-error: var(--color-error);
+  --form-element-bg: var(--white);
+  --form-text-placeholder: var(--color-gray-500);
+
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-hover: var(--color-primary-light);
+  --btn-primary-active: var(--color-primary-dark);
+  --btn-primary-label: var(--white);
+
+  --color-icon-primary: var(--color-gray-500);
+  --color-icon-secondary: inherit;
+
+  /* FONT */
+
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "DM Sans", sans-serif;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* 
+  Changing the base size scales all typography sizes, but sizes stay in proportion 
+  Changing the ratio changes the relative difference between sizes, i.e., a bigger ratio means a bigger difference between each size.
+  */
+  --text-base-size: 1em;
+  --text-scale-ratio: 1.2;
+
+  /* type scale */
+  --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+  --text-sm: calc(1em / var(--text-scale-ratio));
+  --text-md: calc(1em * var(--text-scale-ratio));
+  --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xl: calc(
+    1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio)
+  );
+  --text-xxl: calc(
+    1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio) * var(--text-scale-ratio)
+  );
+  --text-xxxl: calc(
+    1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio)
+  );
+
+  --heading-line-height: 1.2;
+  --body-line-height: 1.5;
+
+  /* SPACING */
+
+  --space-unit: 1em;
+  --space-xxs: calc(0.25 * var(--space-unit));
+  --space-xs: calc(0.5 * var(--space-unit));
+  --space-sm: calc(0.75 * var(--space-unit));
+  --space-md: calc(1.25 * var(--space-unit));
+  --space-lg: calc(2 * var(--space-unit));
+  --space-xl: calc(3.25 * var(--space-unit));
+  --space-xxl: calc(5.25 * var(--space-unit));
+
+  /* 
+  To give all instances of a component default padding, create a variable.
+  This way, we can manage it in one place.
+  */
+  --component-padding: var(--space-sm);
+}
+
+body {
+  font-size: var(--text-base-size);
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  background-color: var(--color-body);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-secondary);
+  color: var(--color-text-heading);
+  line-height: var(--heading-line-height);
+  margin-bottom: var(--space-md);
+}
+
+form {
+  background-color: var(--form-element-bg);
+  border-color: var(--form-element-border);
+}
+
+form:focus {
+  border-color: var(--form-element-border-focus);
+}
+
+form::placeholder {
+  color: var(--form-text-placeholder);
+}
+
+.text--xxxl {
+  font-size: var(--text-xxxl);
+}
+
+h1,
+.text--xxl {
+  font-size: var(--text-xxl);
+}
+
+h2,
+.text--xl {
+  font-size: var(--text-xl);
+}
+
+h3,
+.text--lg {
+  font-size: var(--text-lg);
+}
+
+h4,
+.text--md {
+  font-size: var(--text-md);
+}
+
+.text--sm {
+  font-size: var(--text-sm);
+}
+
+.text--xs {
+  font-size: var(--text-xs);
+}
+
+p {
+  line-height: var(--body-line-height);
+}
+
+/* Use media queries to adjust font base size and scale ratio.
+
+For example: 
+
+@media (min-width: 1500px) {
+  :root {
+    --text-base-size: 1.25em;
+    --text-scale-ratio: 1.25;
+  }
+}
+
+*/
+
+/* UTILITY CLASSES */
+
+/* Create utilities for margin, padding, and gap
+
+Use media queries to update values at specific breakpoints.
+e.g., margin-top--md: --space-md becomes --space-lg
+
+*/
+
+.margin-top--md {
+  margin-top: var(--space-md);
+}
+
+.margin-top--sm {
+  margin-top: var(--space-sm);
+}
+
+.margin-top--lg {
+  margin-top: var(--space-lg);
+}
+
+.margin-top--xl {
+  margin-top: var(--space-xl);
+}
+
+.margin-top--xxl {
+  margin-top: var(--space-xxl);
+}
+
+.margin-bottom--md {
+  margin-bottom: var(--space-md);
+}
+
+.margin-bottom--sm {
+  margin-bottom: var(--space-sm);
+}
+
+.margin-bottom--lg {
+  margin-bottom: var(--space-lg);
+}
+
+.margin-bottom--xl {
+  margin-bottom: var(--space-xl);
+}
+
+.margin-bottom--xxl {
+  margin-bottom: var(--space-xxl);
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+@media (pointer: coarse) {
+  .tap-target {
+    position: relative;
+  }
+
+  .tap-target::after {
+    --tap-target-minimum: 44px;
+    --inset-by: min(0px, calc((100% - var(--tap-target-minimum)) / 2));
+
+    content: "";
+    position: absolute;
+    top: var(--inset-by);
+    left: var(--inset-by);
+    right: var(--inset-by);
+    bottom: var(--inset-by);
+  }
+}
