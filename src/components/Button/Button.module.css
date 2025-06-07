@@ -1,0 +1,14 @@
+.btn {
+  color: var(--black);
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  padding: 0.5rem 1rem;
+  font-weight: var(--font-weight-medium);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.btn:active {
+  transition: none;
+}

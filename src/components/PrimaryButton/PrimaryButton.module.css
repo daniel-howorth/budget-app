@@ -1,0 +1,24 @@
+.btn--primary {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-dark);
+}
+
+.btn--primary:hover {
+  color: var(--color-primary-dark);
+  background-color: var(--white);
+}
+
+/* .btn--primary:active {
+  background-color: var(--color-primary-light);
+} */
+
+.btn--primary-alt {
+  color: var(--color-primary-dark);
+  background-color: var(--white);
+}
+
+.btn--primary-alt:hover {
+  color: var(--black);
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-dark);
+}
