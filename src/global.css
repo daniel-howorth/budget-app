@@ -181,14 +181,12 @@ a {
 :root {
   /* COLOURS */
 
-  --color-primary: hsl(199, 69%, 51%);
-  --color-primary-light: hsl(199, 69%, 58.3%);
-  --color-primary-dark: hsl(199, 69%, 43.4%);
-  --color-primary-bg: hsla(199, 69%, 51%, 0.2);
-  --color-accent: hsl(28, 87%, 62%);
-  --color-accent-light: hsl(28, 87%, 68.7%);
-  --color-accent-dark: hsl(28, 87%, 55.8%);
-  --color-accent-bg: hsla(28, 87%, 62%, 0.2);
+  --color-primary: hsl(215, 57%, 60%);
+  --color-primary-light: hsl(215, 57%, 85%);
+  --color-primary-dark: hsl(215, 44%, 40%);
+  --color-accent: hsl(30, 87%, 64%);
+  --color-accent-light: hsl(30, 87%, 85%);
+  --color-accent-dark: hsl(30, 80%, 45%);
   --color-success: #88c459;
   --color-error: #f5414f;
   --color-warning: #ffd137;

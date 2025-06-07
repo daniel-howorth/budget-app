@@ -1,8 +1,7 @@
 .wrapper {
   min-height: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  background-color: var(--color-gray-100);
+  padding: 32px 16px;
+  background: linear-gradient(to bottom, #f2f6fa, #eaf1f8);
   display: grid;
   grid-template-rows: 1fr;
 }
