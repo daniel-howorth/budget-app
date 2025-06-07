@@ -9,6 +9,7 @@ function Layout() {
       <Header />
       <section>
         <AddBudgetButton />
+        <AddBudgetButton alt={true} />
       </section>
       <section></section>
       <section></section>
