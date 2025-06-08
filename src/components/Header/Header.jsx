@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";
-import AddBudgetButton from "../AddBudgetButton";
+import AddBudgetButton from "../Buttons/AddBudgetButton";
 
 function Header() {
   return (
