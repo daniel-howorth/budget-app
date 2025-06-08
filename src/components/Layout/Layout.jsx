@@ -7,10 +7,7 @@ function Layout() {
   return (
     <div className={styles.layout}>
       <Header />
-      <section>
-        <AddBudgetButton />
-        <AddBudgetButton alt={true} />
-      </section>
+      <section></section>
       <section></section>
       <section></section>
     </div>

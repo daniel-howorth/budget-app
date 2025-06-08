@@ -1,6 +1,9 @@
 .header {
   background: linear-gradient(to left, #3b6cb0, #5e90d4);
   color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .header h1 {
