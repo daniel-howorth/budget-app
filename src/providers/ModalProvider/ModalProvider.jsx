@@ -6,14 +6,27 @@ export const ModalContext = React.createContext();
 
 function ModalProvider({ children }) {
   const [isModalOpen, toggleIsModalOpen] = useToggle();
+  const [modalAction, setModalAction] = React.useState("");
 
   const modal = (
-    <Modal isOpen={isModalOpen} handleDismiss={() => toggleIsModalOpen(false)}>
-      <div>Hello, World!</div>
+    <Modal
+      isOpen={isModalOpen}
+      handleDismiss={() => {
+        setModalAction("");
+        toggleIsModalOpen(false);
+      }}
+    >
+      {modalAction === "add-budget" && "Add budget"}
     </Modal>
   );
 
-  const value = { modal, isModalOpen, toggleIsModalOpen };
+  const value = {
+    modal,
+    isModalOpen,
+    toggleIsModalOpen,
+    modalAction,
+    setModalAction,
+  };
 
   return <ModalContext value={value}>{children}</ModalContext>;
 }
