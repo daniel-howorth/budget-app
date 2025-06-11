@@ -1,0 +1,15 @@
+.input {
+  width: 100%;
+  border: 1px solid var(--form-element-border);
+  border-radius: 0.5rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(94, 143, 211, 0.3);
+}
+
+.input::placeholder {
+  color: var(--form-text-placeholder);
+}

@@ -9,25 +9,6 @@
   color: red;
 }
 
-.wrapper input,
-select {
-  width: 100%;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid var(--form-element-border);
-  border-radius: 0.5rem;
-}
-
-.wrapper input:focus,
-select:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(94, 143, 211, 0.3);
-}
-
-.wrapper input::placeholder {
-  color: var(--form-text-placeholder);
-}
-
 .error {
   border-color: var(--color-error);
 }

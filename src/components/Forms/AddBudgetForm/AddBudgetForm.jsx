@@ -6,7 +6,7 @@ function AddBudgetForm() {
   return (
     <Form>
       <h1>Add Budget</h1>
-      <TextInput id="name" label="Name" placeholder="Groceries" required />
+      <TextInput id={"name"} label="Name" placeholder="Groceries" required />
     </Form>
   );
 }

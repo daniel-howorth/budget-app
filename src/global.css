@@ -451,6 +451,10 @@ e.g., margin-top--md: --space-md becomes --space-lg
   padding-bottom: var(--space-lg);
 }
 
+.form-element-padding {
+  padding: var(--space-xs) var(--space-sm);
+}
+
 .gap--md {
   gap: var(--space-md);
 }
