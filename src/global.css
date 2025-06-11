@@ -204,7 +204,7 @@ a {
   --color-text-heading: var(--black);
   --color-text-subtle: var(--color-gray-700);
   --color-body: var(--white);
-  --color-border: var(--color-gray-700);
+  --color-border: var(--color-gray-500);
   --color-surface: var(--white);
 
   --form-element-border: var(--color-border);
@@ -297,6 +297,10 @@ h4 {
 form {
   background-color: var(--form-element-bg);
   border-color: var(--form-element-border);
+}
+
+form label {
+  color: var(--color-text);
 }
 
 form:focus {

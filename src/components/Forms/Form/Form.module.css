@@ -1,0 +1,9 @@
+.form-wrapper {
+  min-width: 350px;
+}
+
+.form-wrapper h1 {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: var(--space-xxs);
+  margin-bottom: var(--space-sm);
+}

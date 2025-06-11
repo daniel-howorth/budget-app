@@ -1,12 +1,13 @@
 import React from "react";
 import Modal from "../../components/Modal";
 import useToggle from "../../hooks/useToggle";
+import AddBudgetForm from "../../components/Forms/AddBudgetForm";
 
 export const ModalContext = React.createContext();
 
 function ModalProvider({ children }) {
   const [isModalOpen, toggleIsModalOpen] = useToggle();
-  const [modalAction, setModalAction] = React.useState("");
+  const [modalAction, setModalAction] = React.useState("add-budget");
 
   const modal = (
     <Modal
@@ -16,7 +17,7 @@ function ModalProvider({ children }) {
         toggleIsModalOpen(false);
       }}
     >
-      {modalAction === "add-budget" && "Add budget"}
+      {modalAction === "add-budget" && <AddBudgetForm />}
     </Modal>
   );
 
