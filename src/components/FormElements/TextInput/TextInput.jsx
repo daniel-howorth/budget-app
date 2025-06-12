@@ -19,7 +19,12 @@ function TextInput({
 
   return (
     <LabeledInput id={id} label={label} required={required}>
-      <input type="text" className={appliedClassName} {...delegated} />
+      <input
+        type="text"
+        className={appliedClassName}
+        required={required}
+        {...delegated}
+      />
     </LabeledInput>
   );
 }

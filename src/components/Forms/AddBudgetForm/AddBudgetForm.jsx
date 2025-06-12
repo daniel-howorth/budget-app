@@ -8,7 +8,7 @@ function AddBudgetForm() {
   const [budgetName, setBudgetName] = React.useState("");
   const [budgetLimit, setBudgetLimit] = React.useState("");
 
-  function handleSubmit(e) {
+  function handleSubmit() {
     console.log(budgetName);
     console.log(budgetLimit);
   }

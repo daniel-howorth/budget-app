@@ -28,6 +28,7 @@ function NumberInput({
         min={min}
         step={step}
         inputMode={inputMode}
+        required={required}
         className={appliedClassName}
         {...delegated}
         pattern="[0-9]*"
