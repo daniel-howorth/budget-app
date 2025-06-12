@@ -13,12 +13,13 @@ function TextInput({
   const appliedClassName = clsx(
     styles.input,
     "form-element-padding",
+    "tap-target",
     className
   );
 
   return (
     <LabeledInput id={id} label={label} required={required}>
-      <input id={id} type="text" className={appliedClassName} {...delegated} />
+      <input type="text" className={appliedClassName} {...delegated} />
     </LabeledInput>
   );
 }
