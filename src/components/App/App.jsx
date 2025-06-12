@@ -2,14 +2,17 @@ import React from "react";
 import styles from "./App.module.css";
 import Layout from "../Layout";
 import ModalProvider from "../../providers/ModalProvider";
+import BudgetsProvider from "../../providers/BudgetsProvider";
 
 function App() {
   return (
-    <ModalProvider>
-      <div className={styles.wrapper}>
-        <Layout />
-      </div>
-    </ModalProvider>
+    <BudgetsProvider>
+      <ModalProvider>
+        <div className={styles.wrapper}>
+          <Layout />
+        </div>
+      </ModalProvider>
+    </BudgetsProvider>
   );
 }
 

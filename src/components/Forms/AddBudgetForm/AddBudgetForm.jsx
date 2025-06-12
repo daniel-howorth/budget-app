@@ -3,14 +3,17 @@ import Form from "../Form";
 import TextInput from "../../FormElements/TextInput";
 import NumberInput from "../../FormElements/NumberInput";
 import PrimaryButton from "../../Buttons/PrimaryButton";
+import { BudgetsContext } from "../../../providers/BudgetsProvider";
 
 function AddBudgetForm() {
   const [budgetName, setBudgetName] = React.useState("");
   const [budgetLimit, setBudgetLimit] = React.useState("");
 
+  const { addBudget } = React.use(BudgetsContext);
+
+  // Check budget doesn't exist first
   function handleSubmit() {
-    console.log(budgetName);
-    console.log(budgetLimit);
+    addBudget(budgetName, budgetLimit);
   }
 
   return (
@@ -32,7 +35,7 @@ function AddBudgetForm() {
         required
         className="margin-bottom--md"
         value={budgetLimit}
-        onChange={(e) => setBudgetLimit(e.target.value)}
+        onChange={(e) => setBudgetLimit(Number(e.target.value))}
       />
       <PrimaryButton className="margin-left--auto">Add</PrimaryButton>
     </Form>
