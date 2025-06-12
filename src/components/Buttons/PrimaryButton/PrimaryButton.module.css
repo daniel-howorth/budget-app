@@ -2,6 +2,7 @@
   color: var(--btn-primary-label);
   background-color: var(--btn-primary-bg);
   border-color: var(--color-primary-dark);
+  display: block;
 }
 
 .btn--primary:hover {
