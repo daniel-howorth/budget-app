@@ -1,6 +1,6 @@
 import React from "react";
 import LabeledInput from "../LabeledInput";
-import styles from "./NumberInput.module.css";
+import styles from "../Shared.module.css";
 import clsx from "clsx";
 
 function NumberInput({
