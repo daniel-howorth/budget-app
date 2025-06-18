@@ -17,6 +17,10 @@
   background-color: var(--color-gray-100);
   border-bottom: 2px solid rgba(0, 0, 0, 0.06);
   background: linear-gradient(to bottom, #f7fafd, #edf4fa);
+  padding: var(--space-lg);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+  gap: 24px;
 }
 
 .layout section:last-of-type {

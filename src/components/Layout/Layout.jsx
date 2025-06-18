@@ -13,6 +13,7 @@ function Layout() {
       <Header />
       <section>
         <Card title="Groceries" expenditure={100} limit={0} />
+        <Card title="Groceries" expenditure={100} limit={0} />
       </section>
       <section></section>
       <section></section>
