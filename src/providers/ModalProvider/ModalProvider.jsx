@@ -7,7 +7,7 @@ export const ModalContext = React.createContext();
 
 function ModalProvider({ children }) {
   const [isModalOpen, toggleIsModalOpen] = useToggle();
-  const [modalAction, setModalAction] = React.useState("add-budget");
+  const [modalAction, setModalAction] = React.useState();
 
   const modal = (
     <Modal
@@ -25,7 +25,6 @@ function ModalProvider({ children }) {
     modal,
     isModalOpen,
     toggleIsModalOpen,
-    modalAction,
     setModalAction,
   };
 

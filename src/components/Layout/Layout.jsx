@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./Layout.module.css";
 import Header from "../Header";
 import { ModalContext } from "../../providers/ModalProvider";
-import Card from "../Cards/Card";
+// import Card from "../Cards/Card";
+import BudgetCard from "../Cards/BudgetCard";
 
 function Layout() {
   const { modal, isModalOpen } = React.use(ModalContext);
@@ -12,8 +13,8 @@ function Layout() {
       {isModalOpen && modal}
       <Header />
       <section>
-        <Card title="Groceries" expenditure={100} limit={0} />
-        <Card title="Groceries" expenditure={100} limit={0} />
+        <BudgetCard title="Groceries" expenditure={100} limit={0} />
+        <BudgetCard title="Groceries" expenditure={100} limit={0} />
       </section>
       <section></section>
       <section></section>
