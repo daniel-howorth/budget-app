@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Layout.module.css";
 import Header from "../Header";
 import { ModalContext } from "../../providers/ModalProvider";
-// import Card from "../Cards/Card";
 import BudgetCard from "../Cards/BudgetCard";
 
 function Layout() {
@@ -12,9 +11,10 @@ function Layout() {
     <div className={styles.layout}>
       {isModalOpen && modal}
       <Header />
+      {/* BudgetsSection ? */}
       <section>
-        <BudgetCard title="Groceries" expenditure={100} limit={0} />
-        <BudgetCard title="Groceries" expenditure={100} limit={0} />
+        <BudgetCard title="Groceries" expenditure={100} limit={100} />
+        <BudgetCard title="Holiday" expenditure={50} limit={100} />
       </section>
       <section></section>
       <section></section>
