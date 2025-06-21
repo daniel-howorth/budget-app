@@ -15,6 +15,8 @@ function Layout() {
       <section>
         <BudgetCard title="Groceries" expenditure={100} limit={100} />
         <BudgetCard title="Holiday" expenditure={50} limit={100} />
+        <BudgetCard title="Travel" expenditure={85} limit={100} />
+        <BudgetCard title="Renovations" expenditure={1000} limit={800} />
       </section>
       <section></section>
       <section></section>

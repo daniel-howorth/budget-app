@@ -6,7 +6,6 @@ import clsx from "clsx";
 function ProgressBar({ value = 0, max = 100, className, delegated }) {
   const progress = (value / max) * 100;
 
-  // Apply color with class or inline styles
   let indicatorColor;
 
   if (progress >= 100) {
