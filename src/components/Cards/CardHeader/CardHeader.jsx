@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./CardHeader.module.css";
 
 function CardHeader({ name, expenditure, limit }) {
-  console.log(limit);
   return (
     <header className={styles["card-header"]}>
       <h2 className={styles["card-name"]}>{name}</h2>
