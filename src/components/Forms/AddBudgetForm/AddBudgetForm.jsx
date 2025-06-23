@@ -22,8 +22,6 @@ function AddBudgetForm() {
     }
 
     addBudget(budgetName, budgetLimit);
-    setBudgetName("");
-    setBudgetLimit("");
     toggleIsModalOpen();
   }
 

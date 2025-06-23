@@ -11,8 +11,6 @@ function ModalProvider({ children }) {
   const [modalAction, setModalAction] = React.useState();
   const [actionTarget, setActionTarget] = React.useState();
 
-  console.log(actionTarget);
-
   const modal = (
     <Modal
       isOpen={isModalOpen}
@@ -30,6 +28,7 @@ function ModalProvider({ children }) {
     modal,
     isModalOpen,
     toggleIsModalOpen,
+    actionTarget,
     setModalAction,
     setActionTarget,
   };

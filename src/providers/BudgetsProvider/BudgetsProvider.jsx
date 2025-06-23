@@ -39,6 +39,11 @@ function BudgetsProvider({ children }) {
     setBudgets((prevBudgets) => [...prevBudgets, budget]);
   }
 
+  function getBudget(budgetId) {
+    const [budget] = budgets.filter(({ id }) => id === budgetId);
+    return budget;
+  }
+
   function deleteBudget(budgetId) {
     setBudgets((prevBudgets) =>
       prevBudgets.filter(({ id }) => id !== budgetId)
@@ -78,6 +83,7 @@ function BudgetsProvider({ children }) {
     miscExpenses,
     doesBudgetExist,
     addBudget,
+    getBudget,
     deleteBudget,
     addMiscExpense,
     deleteMiscExpense,

@@ -3,14 +3,25 @@ import Form from "../Form";
 import TextInput from "../../FormElements/TextInput";
 import NumberInput from "../../FormElements/NumberInput";
 import PrimaryButton from "../../Buttons/PrimaryButton";
-// import { ModalContext } from "../../../providers/ModalProvider";
+import { ModalContext } from "../../../providers/ModalProvider";
+import { BudgetsContext } from "../../../providers/BudgetsProvider";
 
 function AddExpenseForm() {
   const [item, setItem] = React.useState("");
   const [itemValue, setItemValue] = React.useState("");
 
+  const { toggleIsModalOpen, actionTarget } = React.use(ModalContext);
+  const { getBudget } = React.use(BudgetsContext);
+
+  const budget = getBudget(actionTarget);
+
+  function handleSubmit() {
+    budget.addExpense(item, itemValue);
+    toggleIsModalOpen();
+  }
+
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <h1>Add Expense</h1>
       <TextInput
         id="item"
@@ -28,7 +39,7 @@ function AddExpenseForm() {
         required
         className="margin-bottom--md"
         value={itemValue}
-        onChange={(e) => setItemValue(e.target.value)}
+        onChange={(e) => setItemValue(Number(e.target.value))}
       />
       <PrimaryButton className="margin-left--auto">Add</PrimaryButton>
     </Form>
