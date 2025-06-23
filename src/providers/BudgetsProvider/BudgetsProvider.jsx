@@ -38,6 +38,12 @@ function BudgetsProvider({ children }) {
 
   // Delete budget
 
+  function deleteBudget(budgetId) {
+    setBudgets((prevBudgets) =>
+      prevBudgets.filter(({ id }) => id !== budgetId)
+    );
+  }
+
   function incrementTotalLimit(limit) {
     setTotalLimit(totalLimit + limit);
   }
@@ -49,7 +55,7 @@ function BudgetsProvider({ children }) {
   }
   // Delete misc expense
 
-  const value = { addBudget, addMiscExpense };
+  const value = { addBudget, deleteBudget, addMiscExpense };
 
   return <BudgetsContext value={value}>{children}</BudgetsContext>;
 }
