@@ -6,7 +6,7 @@ function Header() {
   return (
     <header className={`${styles.header} padding--md gap--md`}>
       <h1 className="text--xxl">Budgets</h1>
-      <AddBudgetButton />
+      <AddBudgetButton alt />
     </header>
   );
 }

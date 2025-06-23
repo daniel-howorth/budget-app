@@ -7,7 +7,6 @@ function AddExpenseButton({ className = "", ...delegated }) {
 
   return (
     <PrimaryButton
-      alt
       className={className}
       onClick={() => {
         setModalAction("add-expense");
@@ -15,7 +14,7 @@ function AddExpenseButton({ className = "", ...delegated }) {
       }}
       {...delegated}
     >
-      Add Budget
+      Add Expense
     </PrimaryButton>
   );
 }
