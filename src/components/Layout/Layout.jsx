@@ -18,6 +18,7 @@ function Layout() {
         {budgets.map((budget) => (
           <BudgetCard
             key={budget.id}
+            id={budget.id}
             name={budget.name}
             expenditure={budget.getTotalExpenditure()}
             limit={budget.limit}

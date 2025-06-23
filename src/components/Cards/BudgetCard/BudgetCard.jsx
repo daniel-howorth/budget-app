@@ -5,7 +5,7 @@ import ProgressBar from "../../ProgressBar";
 import CardActions from "../CardActions";
 import AddExpenseButton from "../../Buttons/AddExpenseButton";
 
-function BudgetCard({ name, expenditure, limit }) {
+function BudgetCard({ id, name, expenditure, limit }) {
   return (
     <Card>
       <CardHeader name={name} expenditure={expenditure} limit={limit} />
@@ -15,7 +15,7 @@ function BudgetCard({ name, expenditure, limit }) {
         className="margin-bottom--md"
       />
       <CardActions>
-        <AddExpenseButton />
+        <AddExpenseButton actionTarget={id} />
       </CardActions>
     </Card>
   );

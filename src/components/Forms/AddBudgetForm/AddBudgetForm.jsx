@@ -5,7 +5,6 @@ import NumberInput from "../../FormElements/NumberInput";
 import PrimaryButton from "../../Buttons/PrimaryButton";
 import { BudgetsContext } from "../../../providers/BudgetsProvider";
 import { ModalContext } from "../../../providers/ModalProvider";
-import Modal from "../../Modal";
 
 function AddBudgetForm() {
   const [budgetName, setBudgetName] = React.useState("");
