@@ -40,8 +40,7 @@ function BudgetsProvider({ children }) {
   }
 
   function getBudget(budgetId) {
-    const [budget] = budgets.filter(({ id }) => id === budgetId);
-    return budget;
+    return budgets.find(({ id }) => id === budgetId);
   }
 
   function deleteBudget(budgetId) {

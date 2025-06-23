@@ -8,7 +8,7 @@ function CardHeader({ name, expenditure, limit }) {
       <div className={styles["spending-summary"]}>
         <span className={styles.expenditure}>${expenditure.toFixed(2)}</span>
         {typeof limit === "number" && (
-          <span className={styles.limit}> / ${limit}</span>
+          <span className={styles.limit}> / ${limit.toFixed(2)}</span>
         )}
       </div>
     </header>
