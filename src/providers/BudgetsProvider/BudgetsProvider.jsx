@@ -6,8 +6,6 @@ function BudgetsProvider({ children }) {
   const [budgets, setBudgets] = React.useState([]);
   const [miscExpenses, setMiscExpenses] = React.useState([]);
 
-  console.log(budgets);
-
   function doesBudgetExist(newName) {
     return budgets.some(
       ({ name }) => name.toLowerCase() === newName.toLowerCase()
