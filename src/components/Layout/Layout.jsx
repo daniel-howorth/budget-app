@@ -15,7 +15,7 @@ function Layout() {
       <Header />
       {/* BudgetsSection ? */}
       <section>
-        {/* <BudgetCard title="Renovations" expenditure={1000} limit={800} /> */}
+        {/* <BudgetCard name="Renovations" expenditure={1000} limit={800} /> */}
         {budgets.map((budget) => (
           <BudgetCard
             key={budget.id}

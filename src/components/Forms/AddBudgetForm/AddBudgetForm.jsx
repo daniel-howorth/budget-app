@@ -4,12 +4,15 @@ import TextInput from "../../FormElements/TextInput";
 import NumberInput from "../../FormElements/NumberInput";
 import PrimaryButton from "../../Buttons/PrimaryButton";
 import { BudgetsContext } from "../../../providers/BudgetsProvider";
+import { ModalContext } from "../../../providers/ModalProvider";
+import Modal from "../../Modal";
 
 function AddBudgetForm() {
   const [budgetName, setBudgetName] = React.useState("");
   const [budgetLimit, setBudgetLimit] = React.useState("");
 
   const { addBudget, doesBudgetExist } = React.use(BudgetsContext);
+  const { toggleIsModalOpen } = React.use(ModalContext);
 
   function handleSubmit() {
     if (doesBudgetExist(budgetName)) {
@@ -22,6 +25,7 @@ function AddBudgetForm() {
     addBudget(budgetName, budgetLimit);
     setBudgetName("");
     setBudgetLimit("");
+    toggleIsModalOpen();
   }
 
   return (
