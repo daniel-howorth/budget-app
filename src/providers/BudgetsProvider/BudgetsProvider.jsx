@@ -7,15 +7,35 @@ function BudgetsProvider({ children }) {
   const [budgets, setBudgets] = React.useState([]);
   const [miscExpenses, setMiscExpenses] = React.useState([]);
 
-  console.log(budgets);
-  console.log({ totalLimit });
+  // Check budget doesn't exist
 
-  function addBudget(name, limit) {
-    const id = crypto.randomUUID();
-    const budget = { id, name, limit };
-    setBudgets(budgets.concat(budget));
-    incrementTotalLimit(limit);
+  function addBudget(title, limit) {
+    const _id = crypto.randomUUID();
+    let _expenses = [];
+
+    const budget = {
+      title,
+      limit,
+      get id() {
+        return _id;
+      },
+      get expenses() {
+        return [..._expenses];
+      },
+      addExpense(item, value) {
+        _expenses.push({ id: crypto.randomUUID(), item, value });
+      },
+      deleteExpense(expenseId) {
+        _expenses = _expenses.filter(({ id }) => id !== expenseId);
+      },
+      get totalExpenditure() {
+        return _expenses.reduce((acc, expense) => acc + expense.value, 0);
+      },
+    };
+
+    setBudgets((prevBudgets) => [...prevBudgets, budget]);
   }
+
   // Delete budget
 
   function incrementTotalLimit(limit) {
