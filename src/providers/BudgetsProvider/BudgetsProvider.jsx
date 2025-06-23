@@ -3,7 +3,6 @@ import React from "react";
 export const BudgetsContext = React.createContext();
 
 function BudgetsProvider({ children }) {
-  const [totalLimit, setTotalLimit] = React.useState(0);
   const [budgets, setBudgets] = React.useState([]);
   const [miscExpenses, setMiscExpenses] = React.useState([]);
 
@@ -36,26 +35,51 @@ function BudgetsProvider({ children }) {
     setBudgets((prevBudgets) => [...prevBudgets, budget]);
   }
 
-  // Delete budget
-
   function deleteBudget(budgetId) {
     setBudgets((prevBudgets) =>
       prevBudgets.filter(({ id }) => id !== budgetId)
     );
   }
 
-  function incrementTotalLimit(limit) {
-    setTotalLimit(totalLimit + limit);
-  }
-  // Decrement total limit
-
   function addMiscExpense(item, value) {
-    const expense = { item, value };
-    setMiscExpenses(miscExpenses.concat(expense));
+    const expense = { id: crypto.randomUUID(), item, value };
+    setMiscExpenses((prevMiscExpenses) => [...prevMiscExpenses, expense]);
   }
-  // Delete misc expense
 
-  const value = { addBudget, deleteBudget, addMiscExpense };
+  function deleteMiscExpense(expenseId) {
+    setMiscExpenses((prevMiscExpenses) =>
+      prevMiscExpenses.filter(({ id }) => id !== expenseId)
+    );
+  }
+
+  function getTotalMiscExpenditure() {
+    return miscExpenses.reduce((acc, expense) => acc + expense.value, 0);
+  }
+
+  function getTotalExpenditure() {
+    const budgetsExpenditure = budgets.reduce(
+      (acc, budget) => acc + budget.totalExpenditure,
+      0
+    );
+
+    return budgetsExpenditure + getTotalMiscExpenditure();
+  }
+
+  function getTotalBudget() {
+    return budgets.reduce((acc, budget) => acc + budget.limit, 0);
+  }
+
+  const value = {
+    budgets,
+    miscExpenses,
+    addBudget,
+    deleteBudget,
+    addMiscExpense,
+    deleteMiscExpense,
+    getTotalMiscExpenditure,
+    getTotalExpenditure,
+    getTotalBudget,
+  };
 
   return <BudgetsContext value={value}>{children}</BudgetsContext>;
 }
