@@ -9,11 +9,19 @@ function AddBudgetForm() {
   const [budgetName, setBudgetName] = React.useState("");
   const [budgetLimit, setBudgetLimit] = React.useState("");
 
-  const { addBudget } = React.use(BudgetsContext);
+  const { addBudget, doesBudgetExist } = React.use(BudgetsContext);
 
-  // Check budget doesn't exist first
   function handleSubmit() {
+    if (doesBudgetExist(budgetName)) {
+      alert(
+        "A budget with this name already exists. Budget names must be unique."
+      );
+      return;
+    }
+
     addBudget(budgetName, budgetLimit);
+    setBudgetName("");
+    setBudgetLimit("");
   }
 
   return (

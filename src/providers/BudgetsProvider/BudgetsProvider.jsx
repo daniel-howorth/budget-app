@@ -6,14 +6,20 @@ function BudgetsProvider({ children }) {
   const [budgets, setBudgets] = React.useState([]);
   const [miscExpenses, setMiscExpenses] = React.useState([]);
 
-  // Check budget doesn't exist
+  console.log(budgets);
 
-  function addBudget(title, limit) {
+  function doesBudgetExist(newName) {
+    return budgets.some(
+      ({ name }) => name.toLowerCase() === newName.toLowerCase()
+    );
+  }
+
+  function addBudget(name, limit) {
     const _id = crypto.randomUUID();
     let _expenses = [];
 
     const budget = {
-      title,
+      name,
       limit,
       get id() {
         return _id;
@@ -27,7 +33,7 @@ function BudgetsProvider({ children }) {
       deleteExpense(expenseId) {
         _expenses = _expenses.filter(({ id }) => id !== expenseId);
       },
-      get totalExpenditure() {
+      getTotalExpenditure() {
         return _expenses.reduce((acc, expense) => acc + expense.value, 0);
       },
     };
@@ -72,6 +78,7 @@ function BudgetsProvider({ children }) {
   const value = {
     budgets,
     miscExpenses,
+    doesBudgetExist,
     addBudget,
     deleteBudget,
     addMiscExpense,
