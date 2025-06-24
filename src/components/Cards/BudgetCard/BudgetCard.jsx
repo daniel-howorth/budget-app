@@ -16,8 +16,8 @@ function BudgetCard({ id, name, expenditure, limit }) {
         className="margin-bottom--md"
       />
       <CardActions>
-        <AddExpenseButton actionTarget={id} />
-        <ViewExpensesButton actionTarget={id} />
+        <AddExpenseButton budgetId={id} />
+        <ViewExpensesButton budgetId={id} />
       </CardActions>
     </Card>
   );

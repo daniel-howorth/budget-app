@@ -6,14 +6,14 @@ import PrimaryButton from "../../Buttons/PrimaryButton";
 import { ModalContext } from "../../../providers/ModalProvider";
 import { BudgetsContext } from "../../../providers/BudgetsProvider";
 
-function AddExpenseForm() {
+function AddExpenseForm({ budgetId }) {
   const [item, setItem] = React.useState("");
   const [itemValue, setItemValue] = React.useState("");
 
-  const { closeModal, actionTarget } = React.use(ModalContext);
+  const { closeModal } = React.use(ModalContext);
   const { getBudget } = React.use(BudgetsContext);
 
-  const budget = getBudget(actionTarget);
+  const budget = getBudget(budgetId);
 
   function handleSubmit() {
     budget.addExpense(item, itemValue);
