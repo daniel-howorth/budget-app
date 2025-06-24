@@ -5,7 +5,7 @@ function Expense({ item, value }) {
   return (
     <div className={styles.expense}>
       <dt>{item}</dt>
-      <dd>{value}</dd>
+      <dd>£{value.toFixed(2)}</dd>
     </div>
   );
 }
