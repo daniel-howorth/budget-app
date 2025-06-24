@@ -10,14 +10,14 @@ function AddExpenseForm() {
   const [item, setItem] = React.useState("");
   const [itemValue, setItemValue] = React.useState("");
 
-  const { toggleIsModalOpen, actionTarget } = React.use(ModalContext);
+  const { closeModal, actionTarget } = React.use(ModalContext);
   const { getBudget } = React.use(BudgetsContext);
 
   const budget = getBudget(actionTarget);
 
   function handleSubmit() {
     budget.addExpense(item, itemValue);
-    toggleIsModalOpen();
+    closeModal();
   }
 
   return (

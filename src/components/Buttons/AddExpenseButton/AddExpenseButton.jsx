@@ -1,18 +1,17 @@
 import React from "react";
 import PrimaryButton from "../PrimaryButton";
 import { ModalContext } from "../../../providers/ModalProvider";
+import AddExpenseForm from "../../Forms/AddExpenseForm";
 
 function AddExpenseButton({ actionTarget, className = "", ...delegated }) {
-  const { toggleIsModalOpen, setModalAction, setActionTarget } =
-    React.use(ModalContext);
+  const { openModal, setActionTarget } = React.use(ModalContext);
 
   return (
     <PrimaryButton
       className={className}
       onClick={() => {
-        setModalAction("add-expense");
+        openModal(<AddExpenseForm />);
         setActionTarget(actionTarget);
-        toggleIsModalOpen();
       }}
       {...delegated}
     >

@@ -11,7 +11,7 @@ function AddBudgetForm() {
   const [budgetLimit, setBudgetLimit] = React.useState("");
 
   const { addBudget, doesBudgetExist } = React.use(BudgetsContext);
-  const { toggleIsModalOpen } = React.use(ModalContext);
+  const { closeModal } = React.use(ModalContext);
 
   function handleSubmit() {
     if (doesBudgetExist(budgetName)) {
@@ -22,7 +22,7 @@ function AddBudgetForm() {
     }
 
     addBudget(budgetName, budgetLimit);
-    toggleIsModalOpen();
+    closeModal();
   }
 
   return (
