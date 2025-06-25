@@ -5,9 +5,20 @@ import ProgressBar from "../../ProgressBar";
 import CardActions from "../CardActions";
 import AddExpenseButton from "../../Buttons/AddExpenseButton";
 import ViewExpensesButton from "../../Buttons/ViewExpensesButton";
-import DeleteExpenseButton from "../../Buttons/DeleteButton";
+import DeleteButton from "../../Buttons/DeleteButton";
+import { BudgetsContext } from "../../../providers/BudgetsProvider";
 
 function BudgetCard({ id, name, expenditure, limit }) {
+  const { deleteBudget } = React.use(BudgetsContext);
+
+  function handleDelete(budgetId) {
+    if (window.confirm("Are you sure you want to delete this budget?")) {
+      deleteBudget(budgetId);
+    } else {
+      return;
+    }
+  }
+
   return (
     <Card>
       <CardHeader name={name} expenditure={expenditure} limit={limit} />
@@ -19,7 +30,7 @@ function BudgetCard({ id, name, expenditure, limit }) {
       <CardActions>
         <AddExpenseButton budgetId={id} />
         <ViewExpensesButton budgetId={id} />
-        <DeleteExpenseButton />
+        <DeleteButton size={2} handleDelete={() => handleDelete(id)} />
       </CardActions>
     </Card>
   );
