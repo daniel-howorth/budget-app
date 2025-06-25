@@ -11,3 +11,8 @@
 .expense dt {
   font-weight: var(--font-weight-bold);
 }
+
+.value-wrapper {
+  display: flex;
+  gap: 1em;
+}
