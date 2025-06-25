@@ -12,7 +12,13 @@ function ExpensesList({ budgetId }) {
       <h1>{budget.name} Expenses</h1>
       <dl className={styles["expenses-list"]}>
         {budget.expenses.map(({ id, item, value }) => (
-          <Expense key={id} item={item} value={value} />
+          <Expense
+            key={id}
+            item={item}
+            value={value}
+            budget={budget}
+            expenseId={id}
+          />
         ))}
       </dl>
     </div>
