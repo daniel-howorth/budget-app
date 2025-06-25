@@ -7,3 +7,7 @@
   gap: 16px;
   width: 100%;
 }
+
+.expense dt {
+  font-weight: var(--font-weight-bold);
+}
