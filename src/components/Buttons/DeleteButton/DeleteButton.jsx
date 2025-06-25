@@ -5,6 +5,7 @@ import styles from "./DeleteButton.module.css";
 import clsx from "clsx";
 
 function DeleteButton({
+  handleDelete,
   size = 1,
   strokeWidth = 1,
   className = "",
@@ -12,7 +13,7 @@ function DeleteButton({
 }) {
   const appliedClassName = clsx(styles["delete-button"], className);
   return (
-    <Button className={appliedClassName} {...delegated}>
+    <Button onClick={handleDelete} className={appliedClassName} {...delegated}>
       <X size={`${size}em`} strokeWidth={strokeWidth} />
     </Button>
   );

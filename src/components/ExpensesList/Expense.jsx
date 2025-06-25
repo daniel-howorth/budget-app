@@ -1,19 +1,14 @@
 import React from "react";
 import styles from "./Expense.module.css";
-import DeleteExpenseButton from "../Buttons/DeleteExpenseButton";
+import DeleteButton from "../Buttons/DeleteButton";
 
-function Expense({ budget, expenseId, item, value }) {
+function Expense({ item, value, handleDelete }) {
   return (
     <div className={styles.expense}>
       <dt>{item}</dt>
       <div className={styles["value-wrapper"]}>
         <dd>£{value.toFixed(2)}</dd>
-        <DeleteExpenseButton
-          size={1}
-          strokeWidth={1.5}
-          budget={budget}
-          expenseId={expenseId}
-        />
+        <DeleteButton size={1} strokeWidth={1.5} handleDelete={handleDelete} />
       </div>
     </div>
   );
