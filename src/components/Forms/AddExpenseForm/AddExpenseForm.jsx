@@ -11,12 +11,16 @@ function AddExpenseForm({ budgetId }) {
   const [itemValue, setItemValue] = React.useState("");
 
   const { closeModal } = React.use(ModalContext);
-  const { getBudget } = React.use(BudgetsContext);
-
-  const budget = getBudget(budgetId);
+  const { getBudget, addMiscExpense } = React.use(BudgetsContext);
 
   function handleSubmit() {
-    budget.addExpense(item, itemValue);
+    if (budgetId) {
+      const budget = getBudget(budgetId);
+      budget.addExpense(item, itemValue);
+    } else {
+      addMiscExpense(item, itemValue);
+    }
+
     closeModal();
   }
 
