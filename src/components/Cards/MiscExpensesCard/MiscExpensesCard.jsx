@@ -3,7 +3,7 @@ import Card from "../Card";
 import CardHeader from "../CardHeader";
 import CardActions from "../CardActions";
 import AddExpenseButton from "../../Buttons/AddExpenseButton";
-// import ViewExpensesButton from "../../Buttons/ViewExpensesButton";
+import ViewExpensesButton from "../../Buttons/ViewExpensesButton";
 import { BudgetsContext } from "../../../providers/BudgetsProvider";
 
 function MiscExpensesCard() {
@@ -17,6 +17,7 @@ function MiscExpensesCard() {
       />
       <CardActions>
         <AddExpenseButton />
+        <ViewExpensesButton />
       </CardActions>
     </Card>
   );

@@ -4,19 +4,32 @@ import styles from "./ExpensesList.module.css";
 import { BudgetsContext } from "../../providers/BudgetsProvider";
 
 function ExpensesList({ budgetId }) {
-  const { getBudget } = React.use(BudgetsContext);
-  const budget = getBudget(budgetId);
+  const { getBudget, miscExpenses, deleteMiscExpense } =
+    React.use(BudgetsContext);
+  let budget;
 
-  const [expenses, setExpenses] = React.useState(() => budget.expenses);
+  if (budgetId) {
+    budget = getBudget(budgetId);
+  }
+
+  const [budgetExpenses, setExpenses] = React.useState(() =>
+    budget ? budget.expenses : null
+  );
+
+  const expenses = budget ? budgetExpenses : miscExpenses;
 
   function deleteExpense(expenseId) {
-    setExpenses(expenses.filter(({ id }) => id !== expenseId));
-    budget.deleteExpense(expenseId);
+    if (budget) {
+      budget.deleteExpense(expenseId);
+      setExpenses(expenses.filter(({ id }) => id !== expenseId));
+    } else {
+      deleteMiscExpense(expenseId);
+    }
   }
 
   return (
     <div className={styles["expenses-list-wrapper"]}>
-      <h1>{budget.name} Expenses</h1>
+      <h1>{budget ? budget.name : "Misc"} Expenses</h1>
       <dl className={styles["expenses-list"]}>
         {expenses.map(({ id, item, value }) => (
           <Expense
