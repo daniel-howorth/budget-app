@@ -5,6 +5,8 @@ import { ModalContext } from "../../providers/ModalProvider";
 import BudgetCard from "../Cards/BudgetCard";
 import { BudgetsContext } from "../../providers/BudgetsProvider";
 import MiscExpensesCard from "../Cards/MiscExpensesCard";
+import TotalExpendtureCard from "../Cards/TotalExpenditureCard";
+import TotalExpenditureCard from "../Cards/TotalExpenditureCard";
 
 function Layout() {
   const { modal, isModalOpen } = React.use(ModalContext);
@@ -29,7 +31,9 @@ function Layout() {
       <section>
         <MiscExpensesCard />
       </section>
-      <section></section>
+      <section>
+        <TotalExpenditureCard />
+      </section>
     </div>
   );
 }
