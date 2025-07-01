@@ -7,9 +7,11 @@ import AddExpenseButton from "../../Buttons/AddExpenseButton";
 import ViewExpensesButton from "../../Buttons/ViewExpensesButton";
 import DeleteButton from "../../Buttons/DeleteButton";
 import { BudgetsContext } from "../../../providers/BudgetsProvider";
+import styles from "./BudgetCard.module.css";
 
 function BudgetCard({ id, name, expenditure, limit }) {
   const { deleteBudget } = React.use(BudgetsContext);
+  const isExceeded = expenditure > limit;
 
   function handleDelete(budgetId) {
     if (window.confirm("Are you sure you want to delete this budget?")) {
@@ -20,8 +22,9 @@ function BudgetCard({ id, name, expenditure, limit }) {
   }
 
   return (
-    <Card>
+    <Card className={isExceeded ? styles["budget-exceeded"] : undefined}>
       <CardHeader name={name} expenditure={expenditure} limit={limit} />
+
       <ProgressBar
         value={expenditure}
         max={limit}
