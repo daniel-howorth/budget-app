@@ -6,34 +6,12 @@ function BudgetsProvider({ children }) {
   const [budgets, setBudgets] = React.useState([]);
   const [miscExpenses, setMiscExpenses] = React.useState([]);
 
-  function doesBudgetExist(newName) {
-    return budgets.some(
-      ({ name }) => name.toLowerCase() === newName.toLowerCase()
-    );
-  }
-
   function addBudget(name, limit) {
-    const _id = crypto.randomUUID();
-    let _expenses = [];
-
     const budget = {
+      id: crypto.randomUUID(),
       name,
       limit,
-      get id() {
-        return _id;
-      },
-      get expenses() {
-        return [..._expenses];
-      },
-      addExpense(item, value) {
-        _expenses.push({ id: crypto.randomUUID(), item, value });
-      },
-      deleteExpense(expenseId) {
-        _expenses = _expenses.filter(({ id }) => id !== expenseId);
-      },
-      getTotalExpenditure() {
-        return _expenses.reduce((acc, expense) => acc + expense.value, 0);
-      },
+      expenses: [],
     };
 
     setBudgets((prevBudgets) => [...prevBudgets, budget]);
@@ -47,6 +25,50 @@ function BudgetsProvider({ children }) {
     setBudgets((prevBudgets) =>
       prevBudgets.filter(({ id }) => id !== budgetId)
     );
+  }
+
+  function doesBudgetExist(budgetName) {
+    return budgets.some(
+      ({ name }) => name.toLowerCase() === budgetName.toLowerCase()
+    );
+  }
+
+  function addExpenseToBudget(budgetId, item, value) {
+    setBudgets((prevBudgets) => {
+      prevBudgets.map((budget) => {
+        budget.id === budgetId
+          ? {
+              ...budget,
+              expenses: [
+                ...budget.expenses,
+                { id: crypto.randomUUID(), item, value },
+              ],
+            }
+          : budget;
+      });
+    });
+  }
+
+  function deleteExpenseFromBudget(budgetId, expenseId) {
+    setBudgets((prevBudgets) => {
+      prevBudgets.map((budget) => {
+        budget.id === budgetId
+          ? {
+              ...budget,
+              expenses: budget.expenses.filter(({ id }) => id !== expenseId),
+            }
+          : budget;
+      });
+    });
+  }
+
+  function getBudgetExpenses(budgetId) {
+    return getBudget(budgetId)?.expenses ?? [];
+  }
+
+  function getTotalBudgetExpenditure(budgetId) {
+    const expenses = getBudgetExpenses(budgetId);
+    return expenses.reduce((acc, expense) => acc + expense.value, 0);
   }
 
   function addMiscExpense(item, value) {
@@ -66,7 +88,7 @@ function BudgetsProvider({ children }) {
 
   function getTotalExpenditure() {
     const budgetsExpenditure = budgets.reduce(
-      (acc, budget) => acc + budget.totalExpenditure,
+      (acc, budget) => acc + getTotalBudgetExpenditure(budget.id),
       0
     );
 
@@ -80,10 +102,15 @@ function BudgetsProvider({ children }) {
   const value = {
     budgets,
     miscExpenses,
-    doesBudgetExist,
+
     addBudget,
     getBudget,
     deleteBudget,
+    doesBudgetExist,
+    addExpenseToBudget,
+    deleteExpenseFromBudget,
+    getBudgetExpenses,
+    getTotalBudgetExpenditure,
     addMiscExpense,
     deleteMiscExpense,
     getTotalMiscExpenditure,
