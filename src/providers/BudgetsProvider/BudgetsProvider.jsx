@@ -34,8 +34,8 @@ function BudgetsProvider({ children }) {
   }
 
   function addExpenseToBudget(budgetId, item, value) {
-    setBudgets((prevBudgets) => {
-      prevBudgets.map((budget) => {
+    setBudgets((prevBudgets) =>
+      prevBudgets.map((budget) =>
         budget.id === budgetId
           ? {
               ...budget,
@@ -44,22 +44,22 @@ function BudgetsProvider({ children }) {
                 { id: crypto.randomUUID(), item, value },
               ],
             }
-          : budget;
-      });
-    });
+          : budget
+      )
+    );
   }
 
   function deleteExpenseFromBudget(budgetId, expenseId) {
-    setBudgets((prevBudgets) => {
-      prevBudgets.map((budget) => {
+    setBudgets((prevBudgets) =>
+      prevBudgets.map((budget) =>
         budget.id === budgetId
           ? {
               ...budget,
               expenses: budget.expenses.filter(({ id }) => id !== expenseId),
             }
-          : budget;
-      });
-    });
+          : budget
+      )
+    );
   }
 
   function getBudgetExpenses(budgetId) {
@@ -102,7 +102,6 @@ function BudgetsProvider({ children }) {
   const value = {
     budgets,
     miscExpenses,
-
     addBudget,
     getBudget,
     deleteBudget,

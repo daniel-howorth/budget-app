@@ -1,7 +1,6 @@
 import React from "react";
 import PrimaryButton from "../PrimaryButton";
 import { ModalContext } from "../../../providers/ModalProvider";
-import { BudgetsContext } from "../../../providers/BudgetsProvider";
 import ExpensesList from "../../ExpensesList";
 
 function ViewExpensesButton({ budgetId, className = "" }) {

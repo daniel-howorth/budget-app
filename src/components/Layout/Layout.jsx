@@ -8,7 +8,7 @@ import MiscExpensesCard from "../Cards/MiscExpensesCard";
 
 function Layout() {
   const { modal, isModalOpen } = React.use(ModalContext);
-  const { budgets } = React.use(BudgetsContext);
+  const { budgets, getTotalBudgetExpenditure } = React.use(BudgetsContext);
 
   return (
     <div className={styles.layout}>
@@ -21,7 +21,7 @@ function Layout() {
             key={budget.id}
             id={budget.id}
             name={budget.name}
-            expenditure={budget.getTotalExpenditure()}
+            expenditure={getTotalBudgetExpenditure(budget.id)}
             limit={budget.limit}
           />
         ))}
