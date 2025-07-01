@@ -4,6 +4,10 @@ import styles from "./ProgressBar.module.css";
 import clsx from "clsx";
 
 function ProgressBar({ value = 0, max = 100, className, delegated }) {
+  if (max === 0) {
+    max = 100;
+  }
+
   if (value > max) {
     value = max;
   }
