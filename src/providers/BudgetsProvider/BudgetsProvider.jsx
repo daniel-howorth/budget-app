@@ -3,8 +3,23 @@ import React from "react";
 export const BudgetsContext = React.createContext();
 
 function BudgetsProvider({ children }) {
-  const [budgets, setBudgets] = React.useState([]);
-  const [miscExpenses, setMiscExpenses] = React.useState([]);
+  const [budgets, setBudgets] = React.useState(() => {
+    const savedBudgets = localStorage.getItem("budgets");
+    return savedBudgets ? JSON.parse(savedBudgets) : [];
+  });
+
+  const [miscExpenses, setMiscExpenses] = React.useState(() => {
+    const savedMiscExpenses = localStorage.getItem("miscExpenses");
+    return savedMiscExpenses ? JSON.parse(savedMiscExpenses) : [];
+  });
+
+  React.useEffect(() => {
+    localStorage.setItem("budgets", JSON.stringify(budgets));
+  }, [budgets]);
+
+  React.useEffect(() => {
+    localStorage.setItem("miscExpenses", JSON.stringify(miscExpenses));
+  }, [miscExpenses]);
 
   function addBudget(name, limit) {
     const budget = {
