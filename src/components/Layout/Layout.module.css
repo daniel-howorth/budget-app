@@ -1,8 +1,9 @@
 .layout {
   width: min(1000px, 100%);
+  height: min-content;
   margin: 0 auto;
   display: grid;
-  grid-template-rows: min-content 1fr 1fr 1fr;
+  grid-template-rows: min-content repeat(3, min-content);
   --border-radius: 20px;
   border-radius: var(--border-radius);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);

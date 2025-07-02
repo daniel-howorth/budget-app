@@ -5,7 +5,6 @@ import { ModalContext } from "../../providers/ModalProvider";
 import BudgetCard from "../Cards/BudgetCard";
 import { BudgetsContext } from "../../providers/BudgetsProvider";
 import MiscExpensesCard from "../Cards/MiscExpensesCard";
-import TotalExpendtureCard from "../Cards/TotalExpenditureCard";
 import TotalExpenditureCard from "../Cards/TotalExpenditureCard";
 
 function Layout() {
@@ -16,18 +15,19 @@ function Layout() {
     <div className={styles.layout}>
       {isModalOpen && modal}
       <Header />
-      {/* BudgetsSection ? */}
-      <section>
-        {budgets.map((budget) => (
-          <BudgetCard
-            key={budget.id}
-            id={budget.id}
-            name={budget.name}
-            expenditure={getTotalBudgetExpenditure(budget.id)}
-            limit={budget.limit}
-          />
-        ))}
-      </section>
+      {budgets.length > 0 && (
+        <section>
+          {budgets.map((budget) => (
+            <BudgetCard
+              key={budget.id}
+              id={budget.id}
+              name={budget.name}
+              expenditure={getTotalBudgetExpenditure(budget.id)}
+              limit={budget.limit}
+            />
+          ))}
+        </section>
+      )}
       <section>
         <MiscExpensesCard />
       </section>

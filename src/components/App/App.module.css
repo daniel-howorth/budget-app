@@ -4,4 +4,5 @@
   background: linear-gradient(to bottom, #f2f6fa, #eaf1f8);
   display: grid;
   grid-template-rows: 1fr;
+  align-items: start;
 }
