@@ -9,6 +9,7 @@
 
 .card-name {
   margin-bottom: 0;
+  word-break: break-word;
 }
 
 .spending-summary {
