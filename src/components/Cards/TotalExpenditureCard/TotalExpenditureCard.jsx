@@ -13,10 +13,13 @@ function TotalExpenditureCard() {
     <Card>
       <CardHeader
         name="Total Expenditure"
-        limit={totalBudget}
+        limit={totalBudget > 0 ? totalBudget : null}
         expenditure={totalExpenditure}
       />
-      <ProgressBar value={totalExpenditure} max={totalBudget} />
+      <ProgressBar
+        value={totalBudget > 0 ? totalExpenditure : 0}
+        max={totalBudget}
+      />
     </Card>
   );
 }
