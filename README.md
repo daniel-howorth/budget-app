@@ -4,6 +4,12 @@ A clean, modular budgeting app built with React. This app allows users to create
 
 ---
 
+## Demo
+
+![Calculator Demo](./src/assets/demo.gif)
+
+---
+
 ## Features
 
 - Create and delete **budgets** and associated **expenses**
