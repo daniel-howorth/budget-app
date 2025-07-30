@@ -2,6 +2,8 @@
 
 A clean, modular budgeting app built with React. This app allows users to create budgets, track categorized and miscellaneous expenses, and view overall spending.
 
+[View the live site](https://daniel-howorth.github.io/budget-app/)
+
 ---
 
 ## Demo
